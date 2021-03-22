@@ -130,3 +130,5 @@ def sendEmails():
         time.sleep(1)
         print('one done')
         #end of function
+
+sendEmails()
