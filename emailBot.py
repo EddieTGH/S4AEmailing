@@ -47,7 +47,7 @@ def sendEmails():
         time.sleep(1)
 
         #type s, then enter (select satwika)
-        pyA.typewrite('s')
+        pyA.typewrite('sa')
         time.sleep(1)
         pyA.hotkey('enter')
         
@@ -128,7 +128,11 @@ def sendEmails():
             #pyA.click(pic5X, pic5Y)
 
         time.sleep(1)
+        pyA.click(277,252)
         print('one done')
         #end of function
 
 sendEmails()
+
+def findpos():
+    print(pyA.position())
