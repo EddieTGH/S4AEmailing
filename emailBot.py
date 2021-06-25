@@ -25,7 +25,7 @@ def findEmails(): #search on google and compile a list of emails
 
 
 
-#before, open gmail, make sure emails.txt is filled, and copy paste the email body
+#before, open gmail, make sure emails.txt is filled, and copy paste the email body. make sure a new email is composed and the cursor is on the to: window ready to type the adresseees
 def sendEmails():
     links = openFile()
     print(links)
