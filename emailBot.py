@@ -7,17 +7,21 @@ from datetime import datetime
 from twilio.rest import Client
 import os
 
-
-#Opens the file and extracts the links,edmond.niu@gmail.com returned in a list format
+#notes: make sure u are on 100 percent zoom.
+global links, libraries
+links = []
+libraries = []
+#Opens the file and extracts the links,edmond.niu@gmail.com returned in a list format,
 def openFile():
     f = open('emails.txt','r') #opens the text file
-    links = []
+   
     for line in f: #iterates through the text file
         line = line.rstrip()
-        x = re.findall('.*Email:\s*(\S+)', line) #regular expressions function designed to extract just the link
+        x = re.findall('.*E:\s*(\S+)', line) #regular expressions function designed to extract just the link
+        y = re.findall('.*L:\s*(.+)', line)
         if (len(x)>0):
             links.append(x)
-    return links #returns a list of links
+            libraries.append(y)
 
 
 def findEmails(): #search on google and compile a list of emails
@@ -27,9 +31,9 @@ def findEmails(): #search on google and compile a list of emails
 
 #before, open gmail, make sure emails.txt is filled, and copy paste the email body. make sure a new email is composed and the cursor is on the to: window ready to type the adresseees
 def sendEmails():
-    links = openFile()
-    print(links)
+    openFile()
 
+    i=0
     for link in links:
         address = str(link[0])
 
@@ -101,7 +105,7 @@ def sendEmails():
         time.sleep(1)
 
         #type the subject
-        pyA.typewrite('Coding Classes For Underrepresented Students: STEM For All')
+        pyA.typewrite('Opportunity For Coding Classes For Underrepresented Students: STEM For All')
 
         time.sleep(1)
 
@@ -110,8 +114,19 @@ def sendEmails():
 
         time.sleep(1)
 
+        library = str(libraries[i][0])
+        pyA.typewrite('Good afternoon, librarian at ' + library + '!')
+
+        pyA.hotkey('enter')
+
+        time.sleep(1)
+
+        pyA.hotkey('enter')
+
+        time.sleep(1)
+
         #past the body ctrl v
-        pyA.hotkey('ctrl', 'v')
+        pyA.hotkey('ctrl', 'shift', 'v')
 
         time.sleep(1)
 
@@ -131,6 +146,7 @@ def sendEmails():
         pyA.click(277,252)
         print('one done')
         #end of function
+        i+=1
 
 sendEmails()
 
