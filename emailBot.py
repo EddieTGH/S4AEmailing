@@ -115,7 +115,7 @@ def sendEmails():
         time.sleep(1)
 
         library = str(libraries[i][0])
-        pyA.typewrite('Good afternoon, librarian at ' + library + '!')
+        pyA.typewrite('Good evening, librarian at ' + library + '!')
 
         pyA.hotkey('enter')
 
@@ -127,6 +127,14 @@ def sendEmails():
 
         #past the body ctrl v
         pyA.hotkey('ctrl', 'shift', 'v')
+
+        time.sleep(1)
+
+        #attach flier
+        pyA.hotkey('enter')
+
+        pyA.moveTo(182,1005)
+        pyA.dragTo(1431,736,1,button="left")
 
         time.sleep(1)
 

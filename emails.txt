@@ -1,36 +1,12 @@
-E: mfml@berlinborolibrary.org L: Marie Fleche Memorial Library
-E: support@lmxac.org L: Matawan-Aberdeen Public Library
-E: maywcirc@bccls.org L: Maywood Public Library
-E: rachel.harrison@mendhamtwplib.org L: Mendham Township Public Library
-E: metuchenpubliclibrary@lmxac.org L: Metuchen Public Library
-E: info@middlesexlibrarynj.org L: Middlesex Public Library
-E: Childrens@midlandpark.bccls.org L: Midland Park Memorial Library
-E: friendsofmilltownlibrary@gmail.com L: Milltown Public Library
-E: info@monroetpl.org L: Monroe Township Free Public Library
-E: youthservices@montclair.bccls.org L: Montclair Public Library
-E: movlcirc@bccls.org L: Montvale Free Public Library
-E: tina.mayer@mtarlington.mainlib.org L: Mount Arlington Public Library
-E: refdesk@mountlaurellibrary.org L: Mount Laurel Library
-E: kristin.suarez@mopl.org L: Mount Olive Public Library
-E: info@neptunepubliclibrary.org L: Neptune Public Library
-E: nbfpl@lmxac.org L: New Brunswick Public Library
-E: reference@npl.org L: Newark Public Library
-E: newfieldlibrary@hotmail.com L: Newfield Public Library
-E: info@nbpl.org L: North Bergen Free Public Library
-E: charlie.leppert@northvale.bccls.org L: Northvale Public Library
-E: norwoodboro@gmail.com L: Norwood Public Library
-E: pcondello@oldbridgelibrary.org L: Old Bridge Public Library
-E: otpncirc@bccls.org L: Old Tappan Free Public Library
-E: carol.blakeslee@oradell.bccls.org L: Oradell Public Library
-E: reference@palisadespark.bccls.org L: Palisades Park Free Public Library
-E: pkrdcirc@bccls.org L: Park Ridge Free Public Library
-E: childrens_staff@pburglib.org L: Phillipsburg Free Public Library
-E: teens@piscatawaylibrary.org L: Piscataway Public Library
-E: krichards@mccowan-pitman.org L: Pitman: McCowan Library
-E: support@lmxac.org L: Plainsboro Public Library
-E: monochello@pomptonlakeslibrary.org L: Pompton Lakes Public Library
-E: sconlon@princetonlibrary.org L: Princeton Public Library
-
-
-
-
+E: randrs@mylpl.org L: Lincoln Parish Library
+E: donsmith@state.lib.la.us L: Bastrop Branch
+E: opelousaspubliclibrary@gmail.com L: Opelousas Public Library
+E: help@oplib.org L: Ouachita Parish Library
+E: bbolton@ppgov.net L: Belle Chasse Library
+E: larmstrong@ppgov.net L: Buras Library
+E: plightell@ppgov.net  L: Port Sulphur Library
+E: pwalker@ppgov.net L: Plaquemines Parish Public Library
+E: drencalade@ppgov.net L: Plaquemines Parish Public Library
+E: btoussaint@ppgov.net L: Plaquemines Parish Public Library
+E: mefairb@yahoo.com L: Board of Control: Rapides Parish Library
+E: gwalker@gregwalkerlaw.com L: Board of Control: Rapides Parish Library
