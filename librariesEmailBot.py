@@ -1,18 +1,25 @@
 import pyautogui as pyA
 import time
-import webbrowser
 import re
-import cv2
 from datetime import datetime
 from twilio.rest import Client
-import os
 
-#notes: make sure u are on 100 percent zoom.
+#create a instructions panel and different versions of this     
 global links, libraries
 links = []
 libraries = []
+global subject, coemails, personalizerlevel
 #Opens the file and extracts the links,edmond.niu@gmail.com returned in a list format,
+
+def askForInputs():
+    use = input("What are you using this bot for? Type libraries, seniorcenters, or hackathon: ")
+    subject = input("What is the subject of the email message? Type exactly as you want it: ")
+
+
 def openFile():
+
+    askForInputs()
+
     f = open('emails.txt','r') #opens the text file
    
     for line in f: #iterates through the text file
@@ -105,12 +112,12 @@ def sendEmails():
         time.sleep(1)
 
         #type the subject
-        pyA.typewrite('Opportunity For Coding Classes For Underrepresented Students: STEM For All')
+        pyA.typewrite(subject)
 
         time.sleep(1)
 
         #select body window
-        pyA.click(1347,636)
+        pyA.hotkey("tab")
 
         time.sleep(1)
 
@@ -150,11 +157,24 @@ def sendEmails():
             pyA.click(pic5X, pic5Y)
             #pyA.click(pic5X, pic5Y)
 
+
         time.sleep(1)
-        pyA.click(277,252)
+
+        """ #click on compose again to start new one
+        pic1 = pyA.locateOnScreen('Images/compose.PNG', confidence = 0.75)
+        if pic1 != None:
+            pic1 = pyA.center(pic1)
+            pic1X, pic1Y = pic1
+            time.sleep(1)
+            pyA.moveTo(pic1X, pic1Y) 
+            time.sleep(1)
+            #pyA.click(pic1X, pic1Y) 
+            pyA.click(pic1X, pic1Y)  """
+
         print('one done')
         #end of function
         i+=1
+    print(str(i)+" emails sent")
 
 sendEmails()
 
