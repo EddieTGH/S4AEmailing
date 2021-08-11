@@ -1,0 +1,7 @@
+Step 1: Download Python and pip
+Step 2: pip install these three packages: "pyAutoGUI", "time", and "re"
+Step 3: Open your aigo gmail, and take screenshot of "compose" button, "subject" line, and "send" button, and replace the demo screenshots in this folder with your new screenshots.
+Step 4: Please populate the emails.txt file with your library entries, each separated by a new line in the following format: "E: plainslibrary@hps.org L: Plainsboro Library". Look at emails.txt for an example.
+Step 5: Run the librariesemailbot.py file and follow the instructions sent to your terminal.
+
+Contact me at edmond.niu@gmail.com or on discord at eddietgh#7509 for help!
