@@ -14,27 +14,34 @@ global subject, coemails, personalizerlevel, use
 
 def askForInputs():
     global use, subject, ccs, body, flier, pos1x, pos1y, pos2x, pos2y
+
     print("welcome. this email bot will create a personalized heading for you and send out emails automatically. follow the instructions below")
     time.sleep(3)
+    print("\n------------\n")
     loop = False
     yesno = input("Do you have an emails of any partners/people that you want to send all these emails to (not LIBRARY EMAIL)? Type y for yes, n for no: ")
     if yesno.lower() == "y":
         loop = True
     while loop:
+        print("\n")
         ccs = input("Type the email address of any partners/people that you want to send all these emails to (not LIBRARY EMAIL): ")
         cclist.append(ccs)
+        print("\n")
         yesno = input("Type y if you are done and want to move on, type n if you have more email addresses of partners/people to add (not LIBRARY EMAIL): ")
         if yesno.lower() == "y":
             loop = False
+    print("\n")        
     print("cclist: " + str(cclist))
+    print("\n------------\n")
 
     #use = input("What are you using this bot for? Type libraries, seniorcenters, or hackathon: ")
     subject = input("What is the subject of the email message? Type exactly as you want it: ")
-    body = input("What is the body of the email message without the greeting (the bot will generate it)? I highly recommend copy pasting an already made email body with all the formatting in place: ")
-    flier = input("Would you like to attach a flier? Type y if yes flier, n if no flier.")
+    print("\n------------\n")
+    #body = input("What is the body of the email message without the greeting (the bot will generate it)? I highly recommend copy pasting an already made email body with all the formatting in place: ")
+    flier = input("Would you like to attach a flier? Type y if yes flier, n if no flier. ")
     waiting = True
     while waiting:
-        print("waiting")
+        #print("waiting")
         if flier.lower() == "y":
             flier = True
             waiting = False
@@ -42,18 +49,24 @@ def askForInputs():
             flier = False
             waiting = False
     if flier == True:
+        print("\n")
         input("ok. please re-download the flier you want to attach again so that it appears on the bottom left of your screen as a little pop-up tab. press enter when this is done.")
-        print("switch back to the email tab, and put your cursor over the popup tab. keep your cursor there for 15 seconds at least. put it there now.")
+        print("\n------------\n")
+        print("switch back to the email tab, and put your cursor over the popup tab. keep your cursor there for 15 seconds at least, but you can alt-tab back to this script as soon as you want BUT DONT MOVE YOUR CURSOR.")
         time.sleep(15)
         pos1x, pos1y = pyA.position()
+        print("\n")
         print("okay, get ready for the next step")
         time.sleep(5)
-        print("now switch back to the email tab, and put your cursor anywhere in the body of the email. keep your cursor there for 15 seconds at least. put it there now.")
+        print("\n------------\n")
+        print("now switch back to the email tab, compose/open a fresh email, and put your cursor anywhere in the body of the email. keep your cursor there for 15 seconds at least, but you can alt-tab back to this script as soon as you want BUT DONT MOVE YOUR CURSOR.")
         pos2x, pos2y = pyA.position()
         time.sleep(15)
+        print("\n")
         print("okay, get ready for the next step")
         time.sleep(5)
-    print("thank you. please switch back to your email tab. make sure everything in the email tab is closed. should be a fresh email tab. starting sending in 20 seconds.")
+        print("\n------------\n")
+    print("thank you. please switch back to your email tab. make sure everything in the email tab is closed. should be a fresh email tab. starting sending in 20 seconds. Switch to the email tab, and feel free to watch the magic happen!")
     time.sleep(25)
  
 def openFile():
@@ -103,9 +116,18 @@ def selectcorrectmailingaddress():
 
 def attachflier(): #does not work yet
     #coordinate of the flier
+    print(pos1x)
+    print(pos1y)
+    print(pos2x)
+    print(pos2y)
     pyA.moveTo(pos1x, pos1y)
+    #pyA.mouseDown()
+    time.sleep(1)
+    print("getting ready to drag")
     #coordinate of the email text box
     pyA.dragTo(pos2x, pos2y,1,button="left")
+    #pyA.mouseUp()
+    time.sleep(5) #depends on how slow the computer is
 
 #before, open gmail, make sure emails.txt is filled, and copy paste the email body. make sure a new email is composed and the cursor is on the to: window ready to type the adresseees
 def sendEmails():
@@ -184,9 +206,7 @@ def sendEmails():
         time.sleep(1)
 
         #paste the body ctrl v
-        #pyA.hotkey('ctrl', 'shift', 'v')
-        #type the body
-        pyA.typewrite(body)
+        pyA.hotkey('ctrl', 'shift', 'v')
 
         time.sleep(1)
 

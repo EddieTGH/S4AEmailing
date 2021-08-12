@@ -2,6 +2,10 @@ Step 1: Download Python and pip, and potentialy github desktop and visual studio
 Step 2: pip install these three packages: three commands: "pip install pyautogui", "pip install regex", "pip install opencv-python", and the module "time" should already be installed. Note: if pip install ___ doesn't work, try pip3 install __.
 Step 3: Open your aigo gmail, and take screenshot of "compose" button, "subject" line, and "send" button, and replace the demo screenshots in this folder with your new screenshots. Rename them with "compose", "subject", and "send", all lowercase.
 Step 4: Please populate the emails.txt file with your library entries, each separated by a new line in the following format: "E: plainslibrary@hps.org L: Plainsboro Library". Look at emails.txt for an example. Save the file when you are done.
+Step 6: Take the body of your email template and copy it to your clipboard (do not include the heading in this). Super important step!
 Step 5: Run the librariesemailbot.py file and follow the instructions sent to your terminal.
 
-Contact me at edmond.niu@gmail.com or on discord at eddietgh#7509 for help!
+
+For a full run through of this process, check out (paste youtube link)
+
+Contact me at edmond.niu@gmail.com or on discord at eddietgh#7509 for further help!
