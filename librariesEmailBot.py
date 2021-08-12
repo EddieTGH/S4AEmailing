@@ -34,6 +34,7 @@ def askForInputs():
     flier = input("Would you like to attach a flier? Type y if yes flier, n if no flier.")
     waiting = True
     while waiting:
+        print("waiting")
         if flier.lower() == "y":
             flier = True
             waiting = False
