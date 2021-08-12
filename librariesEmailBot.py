@@ -1,11 +1,11 @@
 import pyautogui as pyA
 import time
 import re
-from datetime import datetime
-from twilio.rest import Client
+#from datetime import datetime
+#from twilio.rest import Client
 
 #create a instructions panel and different versions of this     
-global emails, names, cclist
+global emails, names, cclist, body, flier, pos1x, pos1y, pos2x, pos2y
 emails = []
 names = []
 cclist = []
@@ -13,8 +13,9 @@ global subject, coemails, personalizerlevel, use
 #Opens the file and extracts the links,edmond.niu@gmail.com returned in a list format,
 
 def askForInputs():
-    global use, subject, ccs
-    print("welcome.")
+    global use, subject, ccs, body, flier, pos1x, pos1y, pos2x, pos2y
+    print("welcome. this email bot will create a personalized heading for you and send out emails automatically. follow the instructions below")
+    time.sleep(3)
     loop = False
     yesno = input("Do you have an emails of any partners/people that you want to send all these emails to (not LIBRARY EMAIL)? Type y for yes, n for no: ")
     if yesno.lower() == "y":
@@ -29,8 +30,26 @@ def askForInputs():
 
     #use = input("What are you using this bot for? Type libraries, seniorcenters, or hackathon: ")
     subject = input("What is the subject of the email message? Type exactly as you want it: ")
-    print("thank you. please switch back to your email tab. starting sending in 5 seconds.")
-    time.sleep(5)
+    body = input("What is the body of the email message without the greeting (the bot will generate it)? I highly recommend copy pasting an already made email body with all the formatting in place: ")
+    flier = input("Would you like to attach a flier? Type y if yes flier, n if no flier.")
+    if flier.lower() == "y":
+        flier == True
+    else:
+        flier == False
+    if flier == True:
+        input("ok. please re-download the flier you want to attach again so that it appears on the bottom left of your screen as a little pop-up tab. press enter when this is done.")
+        print("switch back to the email tab, and put your cursor over the popup tab. keep your cursor there for 15 seconds at least. put it there now.")
+        time.sleep(15)
+        pos1x, pos1y = pyA.position()
+        print("okay, get ready for the next step")
+        time.sleep(5)
+        print("now switch back to the email tab, and put your cursor anywhere in the body of the email. keep your cursor there for 15 seconds at least. put it there now.")
+        pos2x, pos2y = pyA.position()
+        time.sleep(15)
+        print("okay, get ready for the next step")
+        time.sleep(5)
+    print("thank you. please switch back to your email tab. make sure everything in the email tab is closed. should be a fresh email tab. starting sending in 20 seconds.")
+    time.sleep(25)
  
 def openFile():
     f = open('emails.txt','r') #opens the text file
@@ -79,9 +98,9 @@ def selectcorrectmailingaddress():
 
 def attachflier(): #does not work yet
     #coordinate of the flier
-    pyA.moveTo(182,1005)
+    pyA.moveTo(pos1x, pos1y)
     #coordinate of the email text box
-    pyA.dragTo(1431,736,1,button="left")
+    pyA.dragTo(pos2x, pos2y,1,button="left")
 
 #before, open gmail, make sure emails.txt is filled, and copy paste the email body. make sure a new email is composed and the cursor is on the to: window ready to type the adresseees
 def sendEmails():
@@ -159,14 +178,17 @@ def sendEmails():
 
         time.sleep(1)
 
-        #past the body ctrl v
-        pyA.hotkey('ctrl', 'shift', 'v')
+        #paste the body ctrl v
+        #pyA.hotkey('ctrl', 'shift', 'v')
+        #type the body
+        pyA.typewrite(body)
 
         time.sleep(1)
 
         pyA.hotkey('enter')
 
         #attach flyer()
+        attachflier()
 
         time.sleep(1)
 
