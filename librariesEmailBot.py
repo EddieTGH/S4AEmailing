@@ -32,10 +32,14 @@ def askForInputs():
     subject = input("What is the subject of the email message? Type exactly as you want it: ")
     body = input("What is the body of the email message without the greeting (the bot will generate it)? I highly recommend copy pasting an already made email body with all the formatting in place: ")
     flier = input("Would you like to attach a flier? Type y if yes flier, n if no flier.")
-    if flier.lower() == "y":
-        flier == True
-    else:
-        flier == False
+    waiting = True
+    while waiting:
+        if flier.lower() == "y":
+            flier = True
+            waiting = False
+        else:
+            flier = False
+            waiting = False
     if flier == True:
         input("ok. please re-download the flier you want to attach again so that it appears on the bottom left of your screen as a little pop-up tab. press enter when this is done.")
         print("switch back to the email tab, and put your cursor over the popup tab. keep your cursor there for 15 seconds at least. put it there now.")
