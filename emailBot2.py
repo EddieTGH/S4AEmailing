@@ -165,5 +165,3 @@ def findpos():
     print(pyA.position())
 
 #findpos()
-
-sup
